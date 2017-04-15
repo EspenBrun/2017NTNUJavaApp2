@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Math Practice</string>
+    <string name="add">Add</string>
+    <string name="multiply">Multiply</string>
+    <string name="answer">Answer:</string>
+    <string name="upper_bound">Upper bound:</string>
+    <string name="correct">Correct!</string>
+    <string name="wrong_correct_answer_is">Wrong. Correct answer is&#160;</string>
+</resources>
