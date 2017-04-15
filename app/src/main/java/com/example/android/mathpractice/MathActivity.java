@@ -45,6 +45,7 @@ public class MathActivity extends AppCompatActivity {
         }
     }
 
+    // Get to new random numbers from the RandomActivity
     public void newRand(){
         randMax = Integer.parseInt(maxView.getText().toString());
 
@@ -56,33 +57,43 @@ public class MathActivity extends AppCompatActivity {
     public void add(View v) {
         rand1 = Integer.parseInt(rand1View.getText().toString());
         rand2 = Integer.parseInt(rand2View.getText().toString());
-        answer = Integer.parseInt(answerView.getText().toString());
-        correct = rand1+rand2;
 
-        if(answer == correct){
-            toastText = getString(R.string.correct);
+        if(answerView.getText().length() > 0) {
+            answer = Integer.parseInt(answerView.getText().toString());
+            correct = rand1+rand2;
+
+            if(answer == correct){
+                toastText = getString(R.string.correct);
+            } else {
+                toastText = getString(R.string.wrong_correct_answer_is) + correct;
+            }
+
+            newRand();
         } else {
-            toastText = getString(R.string.wrong_correct_answer_is) + correct;
+            toastText = "Try to answer";
         }
 
         Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
-        newRand();
     }
 
     public void multiply(View v){
         rand1 = Integer.parseInt(rand1View.getText().toString());
         rand2 = Integer.parseInt(rand2View.getText().toString());
-        answer = Integer.parseInt(answerView.getText().toString());
-        correct = rand1*rand2;
+        if(answerView.getText().length() > 0) {
+            answer = Integer.parseInt(answerView.getText().toString());
+            correct = rand1 * rand2;
 
+            if (answer == correct) {
+                toastText = getString(R.string.correct);
+            } else {
+                toastText = getString(R.string.wrong_correct_answer_is) + correct;
+            }
 
-        if(answer == correct){
-            toastText = getString(R.string.correct);
+            newRand();
         } else {
-            toastText = getString(R.string.wrong_correct_answer_is) + correct;
+            toastText = "Try to answer";
         }
 
         Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
-        newRand();
     }
 }
