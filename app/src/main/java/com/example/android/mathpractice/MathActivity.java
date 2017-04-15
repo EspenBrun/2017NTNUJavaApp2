@@ -47,11 +47,13 @@ public class MathActivity extends AppCompatActivity {
 
     // Get to new random numbers from the RandomActivity
     public void newRand(){
-        randMax = Integer.parseInt(maxView.getText().toString());
+        if(maxView.getText().length() > 0) {
+            randMax = Integer.parseInt(maxView.getText().toString());
 
-        Intent intent = new Intent("ebru.randomActivity");
-        intent.putExtra("randMax",randMax);
-        startActivityForResult(intent, request_Code);
+            Intent intent = new Intent("ebru.randomActivity");
+            intent.putExtra("randMax", randMax);
+            startActivityForResult(intent, request_Code);
+        }
     }
 
     public void add(View v) {
